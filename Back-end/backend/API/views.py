@@ -23,7 +23,8 @@ def retreiveVideoIds(query):
         'q' : query,
         'maxResults' : 200,
         'type' : 'video',
-        'key' : settings.YOUTUBE_DATA_API_KEY
+        'order' : 'date',
+        'key' : settings.YOUTUBE_DATA_API_KEY,
     }
 
     request = requests.get(URL_SEARCH, params = params)
@@ -51,7 +52,7 @@ def retrieveVideos(videoIds):
         videos.append({
             'title' : result['snippet']['title'],
             'id' : result['id'],
-            'img' : result['snippet']['thumbnails']['high']['url'],
+            'img' : result['snippet']['thumbnails']['medium']['url'],
             'publishedAt' : result['snippet']['publishedAt'],
             'description' : result['snippet']['description'],
             'channelTitle' : result['snippet']['channelTitle'],

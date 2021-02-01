@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'API',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,3 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 YOUTUBE_DATA_API_KEY = 'AIzaSyB8bhmXUrpdSKQXyAYEmnq_vSdsq0w8GoY'
+
+CORS_ORIGIN_ALLOW_ALL = True
