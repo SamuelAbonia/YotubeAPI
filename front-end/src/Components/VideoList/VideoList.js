@@ -33,7 +33,7 @@ export const VideoList = () => {
 
     return (
         <div>
-            <p class="result" style={{ "text-align": "left" }}>Search results for "Maluma"</p>
+            <p class="result" style={{ "text-align": "left" }}>Search results for "{params.query}"</p>
             <div>
                 {videos.map(video => (
                     <Card key = {video.id} video = {video}></Card>
